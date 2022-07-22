@@ -1,0 +1,12 @@
+.login-pf body {
+  background: none;
+}
+
+#kc-header {
+  display: none;
+}
+
+#kc-locale-dropdown > ul {
+  max-height: 200px;
+  overflow-y: scroll;
+}
