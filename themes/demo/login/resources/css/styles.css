@@ -12,6 +12,19 @@ body {
   overflow: hidden;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  background-image: url(../img/blob.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  top: 0;
+  right: 0;
+  height: 150px;
+  width: 194px;
+  z-index: -1;
+}
+
 body::after {
   content: "";
   position: fixed;
@@ -54,6 +67,12 @@ h1 {
   font-size: 1.2rem!important;
 }
 
+#kc-info-wrapper {
+  display: inline-block!important;
+  padding: 0!important;
+  margin: 15px 35px;
+}
+
 .pf-c-form__label-text {
   font-weight: 500;
   font-size: .8rem;
@@ -61,7 +80,8 @@ h1 {
 
 .card-pf,
 .pf-c-form-control,
-input[type="submit"] {
+input[type="submit"],
+#kc-info-wrapper {
   border-radius: 7px;
 }
 
@@ -72,6 +92,11 @@ input[type="submit"] {
 
 
 @media (max-width: 767px) {
+  body::before {
+    transform: scale(0.6);
+    transform-origin: top right;
+  }
+
   body::after {
     transform: none;
   }
@@ -80,5 +105,9 @@ input[type="submit"] {
     width: 130px;
     margin-top: -15px;
     margin-left: 20px;
+  }
+
+  .card-pf {
+    background: none;
   }
 }
